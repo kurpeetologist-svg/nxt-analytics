@@ -1,3 +1,5 @@
 # NXT-USA Campaign Analytics
 
-Self-contained GitHub Pages campaign report. Replace the repository-root `index.html` with the included file.
+Final polished, self-contained GitHub Pages report for the NXT-USA Ingredient Live campaign.
+
+Upload `index.html` to the repository root and replace the existing version.
