@@ -1,10 +1,15 @@
-# NXT-USA Campaign Analytics
+# NXT-USA Ingredient Live Campaign Report
 
-Updated GitHub Pages dashboard featuring:
+Expanded executive dashboard with the original visual style preserved.
 
-- Executive Summary
-- Strategic Insights
-- What's Next
-- Reusable campaign-reporting framework
+## Added
+- Report scope strip
+- Detailed funnel analysis
+- Expanded audience KPIs
+- Registration timeline
+- Representative organizations
+- Campaign evolution timeline
+- More specific strategic insights
+- Data-source appendix
 
-Upload `index.html` to the repository root and replace the existing file.
+Replace the existing repository-root `index.html` with this version.

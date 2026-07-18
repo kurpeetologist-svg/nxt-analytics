@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="NXT-USA Ingredient Live campaign analytics report.">
-<title>NXT-USA Campaign Analytics</title>
+<title>NXT-USA Ingredient Live Campaign Report</title>
 <style>
 :root {
   --text:#2a2a28;
@@ -462,14 +462,82 @@ footer {
 }
 .footer-row span:last-child { margin-left:auto; }
 
+
+.scope-strip {
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.scope-item { padding:18px 18px 18px 0; }
+.scope-item + .scope-item { border-left:1px solid var(--line); padding-left:18px; }
+.scope-item span { display:block; color:var(--muted); font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; margin-bottom:5px; }
+.scope-item strong { font-size:14px; font-weight:650; }
+
+.funnel-detail {
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:60px;
+  align-items:start;
+}
+.funnel-stack { background:#fff; border:1px solid var(--line); padding:34px; }
+.funnel-row { display:grid; grid-template-columns:170px 1fr 70px; gap:16px; align-items:center; padding:15px 0; border-bottom:1px solid var(--line); }
+.funnel-row:last-child { border-bottom:0; }
+.funnel-row span { font-size:13px; color:#4f504d; }
+.funnel-row b { text-align:right; font-size:15px; }
+.funnel-progress { height:12px; background:#ecece8; overflow:hidden; }
+.funnel-progress i { display:block; height:100%; width:var(--width); background:var(--green); }
+.funnel-row:nth-child(2) i { background:var(--teal); }
+.funnel-row:nth-child(3) i { background:var(--yellow); }
+.funnel-row:nth-child(4) i { background:var(--orange); }
+.funnel-notes { display:grid; gap:18px; }
+.insight-card { background:#fff; border:1px solid var(--line); padding:26px; }
+.insight-card span { color:var(--green); font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
+.insight-card h3 { margin:10px 0 8px; font-size:19px; }
+.insight-card p { margin:0; color:var(--muted); font-size:13px; }
+
+.audience-metrics { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:54px; }
+.audience-metric { padding:24px 18px 26px 0; }
+.audience-metric + .audience-metric { border-left:1px solid var(--line); padding-left:18px; }
+.audience-metric span { display:block; color:var(--muted); font-size:11px; font-weight:700; margin-bottom:10px; }
+.audience-metric strong { font-size:32px; line-height:1; }
+
+.registration-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:54px; }
+.spark-chart { height:260px; display:flex; align-items:flex-end; gap:16px; padding:24px 12px 8px; border-left:1px solid var(--line); border-bottom:1px solid var(--line); background:#fff; }
+.spark-col { flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; gap:8px; }
+.spark-bar { width:100%; max-width:42px; height:var(--height); background:linear-gradient(180deg,var(--teal),var(--green)); min-height:4px; }
+.spark-col b { font-size:11px; }
+.spark-col span { font-size:10px; color:var(--muted); writing-mode:vertical-rl; transform:rotate(180deg); height:48px; }
+.org-list { columns:2; column-gap:28px; margin:0; padding:0; list-style:none; }
+.org-list li { break-inside:avoid; padding:9px 0; border-bottom:1px solid var(--line); font-size:12px; color:#50514e; }
+
+.timeline { display:grid; grid-template-columns:repeat(5,1fr); gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.timeline-item { padding:28px 22px 30px 0; position:relative; }
+.timeline-item + .timeline-item { border-left:1px solid var(--line); padding-left:22px; }
+.timeline-item time { color:var(--green); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+.timeline-item h3 { font-size:17px; margin:10px 0 8px; }
+.timeline-item p { margin:0; color:var(--muted); font-size:12px; }
+
+.source-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; }
+.source-card { border-top:2px solid var(--green); padding-top:16px; }
+.source-card:nth-child(2) { border-top-color:var(--teal); }
+.source-card:nth-child(3) { border-top-color:var(--yellow); }
+.source-card:nth-child(4) { border-top-color:var(--orange); }
+.source-card:nth-child(5) { border-top-color:var(--blue); }
+.source-card strong { display:block; font-size:14px; margin-bottom:7px; }
+.source-card span { color:var(--muted); font-size:12px; }
+
 @media(max-width:900px) {
   nav { display:none; }
-  .hero-grid,.section-intro,.performance-grid,.audience-grid,.closing { grid-template-columns:1fr; }
+  .hero-grid,.section-intro,.performance-grid,.audience-grid,.closing,.funnel-detail,.registration-grid { grid-template-columns:1fr; }
   .hero-grid,.performance-grid,.audience-grid { gap:42px; }
   .section-intro { gap:18px; }
   .metrics { grid-template-columns:repeat(2,1fr); }
   .metric:nth-child(3) { border-left:0; }
   .recommendations { grid-template-columns:repeat(2,1fr); }
+  .scope-strip,.timeline,.source-grid { grid-template-columns:repeat(2,1fr); }
+  .audience-metrics { grid-template-columns:repeat(3,1fr); }
   h1 { font-size:52px; }
 }
 @media(max-width:600px) {
@@ -485,8 +553,8 @@ footer {
   .hero-copy { font-size:17px; }
   section { padding:70px 0; }
   .section-intro h2,.closing h2 { font-size:31px; }
-  .metrics,.recommendations { grid-template-columns:1fr; }
-  .metric + .metric { border-left:0; border-top:1px solid var(--line); padding-left:0; }
+  .metrics,.recommendations,.scope-strip,.timeline,.source-grid,.audience-metrics { grid-template-columns:1fr; }
+  .metric + .metric,.scope-item + .scope-item,.audience-metric + .audience-metric,.timeline-item + .timeline-item { border-left:0; border-top:1px solid var(--line); padding-left:0; }
   .callout { grid-template-columns:1fr; }
   .step { grid-template-columns:105px 1fr 55px; }
   .footer-row { flex-direction:column; align-items:flex-start; }
@@ -502,8 +570,10 @@ footer {
     <nav>
       <a href="#overview">Overview</a>
       <a href="#performance">Performance</a>
+      <a href="#funnel">Funnel</a>
       <a href="#audience">Audience</a>
-      <a href="#insights">Strategic Insights</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#insights">Insights</a>
     </nav>
   </div>
 </header>
@@ -601,6 +671,35 @@ footer {
     </div>
   </section>
 
+  <section id="funnel">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Funnel analysis</p>
+          <h2>Interest was present. Completion was the constraint.</h2>
+        </div>
+        <p>The campaign generated 28 ad clicks and 23 Lead Gen Form opens. Only one paid form submission followed, pinpointing the sharpest conversion loss at the final form-completion step.</p>
+      </div>
+
+      <div class="funnel-detail">
+        <div class="funnel-stack">
+          <div class="funnel-row"><span>Lead Gen impressions</span><div class="funnel-progress"><i style="--width:100%"></i></div><b>5,198</b></div>
+          <div class="funnel-row"><span>Ad clicks</span><div class="funnel-progress"><i style="--width:54%"></i></div><b>28</b></div>
+          <div class="funnel-row"><span>Lead Form opens</span><div class="funnel-progress"><i style="--width:44%"></i></div><b>23</b></div>
+          <div class="funnel-row"><span>Paid form leads</span><div class="funnel-progress"><i style="--width:8%"></i></div><b>1</b></div>
+          <div class="funnel-row"><span>Direct event clicks</span><div class="funnel-progress"><i style="--width:14%"></i></div><b>7</b></div>
+          <div class="funnel-row"><span>Final event registrations</span><div class="funnel-progress"><i style="--width:96%"></i></div><b>50</b></div>
+        </div>
+
+        <div class="funnel-notes">
+          <article class="insight-card"><span>Click → Form Open</span><h3>82.1% progression</h3><p>Most users who clicked proceeded to open the registration form, indicating that the creative and topic generated genuine intent.</p></article>
+          <article class="insight-card"><span>Form Open → Lead</span><h3>4.3% completion</h3><p>The largest conversion loss occurred after the form opened. Simplifying the experience should be the first optimization priority.</p></article>
+          <article class="insight-card"><span>Measurement note</span><h3>Two paths, separate outcomes</h3><p>Direct event traffic bypassed the Lead Gen Form, so event-page clicks and final registration totals should not be treated as paid form conversions.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="audience">
     <div class="container">
       <div class="section-intro">
@@ -609,6 +708,14 @@ footer {
           <h2>Global reach with strong external participation.</h2>
         </div>
         <p>The registration export contained 50 event leads across 11 countries and 40 organizations. Public reporting is aggregated and excludes personal lead information.</p>
+      </div>
+
+      <div class="audience-metrics">
+        <div class="audience-metric"><span>Total registrations</span><strong>50</strong></div>
+        <div class="audience-metric"><span>External registrants</span><strong>41</strong></div>
+        <div class="audience-metric"><span>Internal registrants</span><strong>9</strong></div>
+        <div class="audience-metric"><span>Countries represented</span><strong>11</strong></div>
+        <div class="audience-metric"><span>Organizations represented</span><strong>40</strong></div>
       </div>
 
       <div class="audience-grid">
@@ -639,10 +746,53 @@ footer {
           <div class="country"><div class="country-head"><span>Other markets</span><b>6</b></div><div class="country-track"><div class="country-fill" style="--width:21%"></div></div></div>
         </div>
       </div>
+      <div class="registration-grid">
+        <div>
+          <div class="split-title"><strong>Registrations by created date</strong><span>June 1–16</span></div>
+          <div class="spark-chart" aria-label="Registration volume by date">
+            <div class="spark-col"><b>2</b><div class="spark-bar" style="--height:10%"></div><span>Jun 1</span></div>
+            <div class="spark-col"><b>6</b><div class="spark-bar" style="--height:30%"></div><span>Jun 2</span></div>
+            <div class="spark-col"><b>1</b><div class="spark-bar" style="--height:5%"></div><span>Jun 3</span></div>
+            <div class="spark-col"><b>1</b><div class="spark-bar" style="--height:5%"></div><span>Jun 4</span></div>
+            <div class="spark-col"><b>3</b><div class="spark-bar" style="--height:15%"></div><span>Jun 9</span></div>
+            <div class="spark-col"><b>3</b><div class="spark-bar" style="--height:15%"></div><span>Jun 10</span></div>
+            <div class="spark-col"><b>2</b><div class="spark-bar" style="--height:10%"></div><span>Jun 14</span></div>
+            <div class="spark-col"><b>20</b><div class="spark-bar" style="--height:100%"></div><span>Jun 15</span></div>
+            <div class="spark-col"><b>9</b><div class="spark-bar" style="--height:45%"></div><span>Jun 16</span></div>
+          </div>
+          <p class="block-note">Registration volume accelerated immediately before the live event, with the largest spike on June 15.</p>
+        </div>
+
+        <div>
+          <div class="split-title"><strong>Representative organizations</strong><span>40 total</span></div>
+          <ul class="org-list">
+            <li>EPIC</li><li>Aurora Nutriscience Inc.</li><li>BIE International</li><li>Blue Helix Health</li><li>BlueHelix</li><li>Health Research Institute</li><li>Himalaya Wellness USA</li><li>India Glycols Limited</li><li>Indus Biotech Limited</li><li>Life180</li><li>Linus's Thermal Analysis</li><li>Natvera's Way</li><li>NutrBio Molecular Products</li><li>PhytoSmart</li><li>SelFemployed</li><li>The ACME Laboratories Ltd.</li><li>Twin Arbor Labs</li><li>VitalWorks East</li><li>Wilson's Pharmaceuticals</li><li>Zydus Wellness</li>
+          </ul>
+          <p class="block-note">The event reached a broad mix of ingredient, supplement, research, manufacturing, and wellness organizations.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  
+  <section id="timeline" class="soft">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Campaign evolution</p>
+          <h2>A compact test-and-learn cycle across eight days.</h2>
+        </div>
+        <p>The campaign moved from two Lead Gen creative concepts to an updated form and targeting approach, then finished with a direct-to-event traffic push.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item"><time>June 9</time><h3>Campaign launch</h3><p>Ad 1 and Ad 2 began testing two educational message angles.</p></article>
+        <article class="timeline-item"><time>June 10</time><h3>Early performance read</h3><p>Ad 1 emerged as the strongest Lead Gen creative and messaging baseline.</p></article>
+        <article class="timeline-item"><time>June 13</time><h3>Form + targeting update</h3><p>The first final push tested revised messaging, targeting, and form experience.</p></article>
+        <article class="timeline-item"><time>June 15</time><h3>Direct event traffic</h3><p>The campaign bypassed the form and sent users directly to the event page.</p></article>
+        <article class="timeline-item"><time>June 16</time><h3>Live event</h3><p>The campaign closed with 50 registrations across 11 countries and 40 organizations.</p></article>
+      </div>
+    </div>
+  </section>
+
   <section id="summary">
     <div class="container">
       <div class="section-intro">
@@ -676,41 +826,10 @@ footer {
       </div>
 
       <div class="recommendations">
-        <article class="recommendation">
-          <span class="num">Audience</span>
-          <h3>Strong audience-market fit</h3>
-          <p>
-            LinkedIn successfully generated awareness among qualified professionals
-            across multiple markets, validating interest in the webinar topic.
-          </p>
-        </article>
-
-        <article class="recommendation">
-          <span class="num">Funnel</span>
-          <h3>The Lead Gen Form—not the creative—limited conversion</h3>
-          <p>
-            Campaign engagement remained healthy through form opens, suggesting
-            that the largest optimization opportunity lies within the registration experience.
-          </p>
-        </article>
-
-        <article class="recommendation">
-          <span class="num">Reach</span>
-          <h3>Meaningful global engagement</h3>
-          <p>
-            The webinar attracted registrations from <strong>11 countries</strong>
-            and <strong>40 organizations</strong>, demonstrating broad international relevance.
-          </p>
-        </article>
-
-        <article class="recommendation">
-          <span class="num">Measurement</span>
-          <h3>Better attribution creates better decisions</h3>
-          <p>
-            Future reporting should connect paid media, registrations, attendance,
-            replay views, and downstream engagement to create a complete measurement framework.
-          </p>
-        </article>
+        <article class="recommendation"><span class="num">Creative</span><h3>Ad 1 established the strongest message baseline</h3><p>The original Ingredient Live Lead Gen creative delivered the only paid form lead and the strongest overall CTR among the Lead Gen concepts.</p></article>
+        <article class="recommendation"><span class="num">Funnel</span><h3>Registration friction—not audience quality—limited conversion</h3><p>An 82.1% click-to-form-open rate confirmed interest, while the 4.3% completion rate isolated the form as the primary bottleneck.</p></article>
+        <article class="recommendation"><span class="num">Path</span><h3>Direct event traffic should remain part of the mix</h3><p>The final push demonstrated a useful alternative for time-sensitive event promotion when reducing friction matters more than capturing a form lead.</p></article>
+        <article class="recommendation"><span class="num">Operating model</span><h3>Future campaigns should emphasize rapid iteration</h3><p>Launch fewer message angles, review early performance within 24 hours, and scale the strongest creative before adding complexity.</p></article>
       </div>
 
       <div class="callout" style="margin-top:60px">
@@ -720,6 +839,25 @@ footer {
           webinars, ingredient launches, paid campaigns, and demand-generation initiatives—
           making campaign reporting more consistent, actionable, and scalable across NXT-USA.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="appendix">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Appendix</p>
+          <h2>Campaign data sources.</h2>
+        </div>
+        <p>This report consolidates platform performance, budget tracking, event registration data, and internal analysis into one executive view.</p>
+      </div>
+      <div class="source-grid">
+        <div class="source-card"><strong>LinkedIn Campaign Manager</strong><span>Spend, impressions, clicks, engagements, form opens, leads, CTR, and CPC.</span></div>
+        <div class="source-card"><strong>Lead Gen performance exports</strong><span>Campaign- and creative-level performance across June 9–16.</span></div>
+        <div class="source-card"><strong>Event registration export</strong><span>Aggregate registrant geography, organization, and created-date trends.</span></div>
+        <div class="source-card"><strong>Budget tracker</strong><span>Working budget, actual spend, utilization, and remaining funds.</span></div>
+        <div class="source-card"><strong>Internal campaign notes</strong><span>Experiment observations, interpretation, and future recommendations.</span></div>
       </div>
     </div>
   </section>
